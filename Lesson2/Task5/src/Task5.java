@@ -5,19 +5,25 @@ public class Task5 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int[] arr =  new int[3];
 
         try {
             System.out.println("Введите первое целое число");
-            int value1 = scanner.nextInt();
+            arr[0] = scanner.nextInt();
 
             System.out.println("Введите второе целое число");
-            int value2 = scanner.nextInt();
+            arr[1] = scanner.nextInt();
 
             System.out.println("Введите третье целое число");
-            int value3 = scanner.nextInt();
+            arr[2] = scanner.nextInt();
 
-            int min = Math.min(value1, value2);
-            min = Math.min(min, value3);
+            int min = arr[0];
+
+            for (int j : arr) {
+                if (j < min) {
+                    min = j;
+                }
+            }
 
             System.out.println("Наименьшее из чисел: " + min);
 
