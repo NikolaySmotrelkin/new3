@@ -5,6 +5,8 @@ public class Dog extends Animal {
     public Dog() {
         food = "кость";
         location = "в конуре";
+
+        String dogType = "охотничья";
     }
 
     @Override

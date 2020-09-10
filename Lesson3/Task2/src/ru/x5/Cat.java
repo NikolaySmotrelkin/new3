@@ -5,6 +5,8 @@ public class Cat extends Animal {
     public Cat() {
         food = "мышь";
         location = "в доме";
+
+        String catType = "Короткошерстная";
     }
 
     @Override

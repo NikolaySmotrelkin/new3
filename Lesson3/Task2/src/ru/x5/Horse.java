@@ -5,6 +5,8 @@ public class Horse extends Animal{
     public Horse() {
         food = "сено";
         location = "в стойле";
+
+        String horseType = "ездовая";
     }
 
     @Override
