@@ -11,14 +11,24 @@ public class Task2 {
 
         Animal[] animal = new Animal[3];
 
-        animal[0] = new Cat();
-        animal[1] = new Dog();
-        animal[2] = new Horse();
+        animal[0] = new Cat("мышь", "в доме", "короткошерстная");
+        animal[1] = new Dog("кость", "в конуре", "охотничья");
+        animal[2] = new Horse("сено", "в стойле", "ездовая");
 
         for (Animal anim : animal) {
             anim.makeNoice();
             anim.eat();
 
+            // Вывод специфицеских для объекта свойств
+            if (anim instanceof Cat) {
+                System.out.println(((Cat)anim).getCatType());
+            } else if(anim instanceof Dog) {
+                System.out.println(((Dog)anim).getDogType());
+            } else {
+                System.out.println(((Horse)anim).getHorseType());
+            }
+
+            // Идем к ветеренару
             veterinarian.treatAnimal(anim);
         }
 
