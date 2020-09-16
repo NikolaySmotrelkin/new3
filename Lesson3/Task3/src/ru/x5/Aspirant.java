@@ -3,14 +3,23 @@ package ru.x5;
 public class Aspirant extends Student {
 
     // Научная работа
-    public String degree;
+    private String degree;
+
+    public Aspirant(String firstName, String lastName, String group, Double averageMark, String degree) {
+        super(firstName, lastName, group, averageMark);
+        this.degree = degree;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
 
     @Override
     public double getScholarship() {
-        if (averageMark == 5.0f) {
-            return 200.0f;
+        if (getAverageMark() == 5.0) {
+            return 200.0;
         } else {
-            return 180.0f;
+            return 180.0;
         }
     }
 }

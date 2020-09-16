@@ -4,47 +4,37 @@ import ru.x5.Aspirant;
 public class Task3 {
 
     public static void main(String[] args) {
-        Student student = new Aspirant();
+        Student student = new Aspirant("Николай","Смотрелкин","1", 5.0, "Сферический конь в вакуме");
 
-        student.firstName = "Николай";
-        student.lastName = "Смотрелкин";
-        student.group = "1";
-        student.averageMark = 5.0f;
+        System.out.println(" Фамилия: " + student.getLastName() +
+                           " Средняя оценка: " + student.getAverageMark() +
+                           " стипендия: " + student.getScholarship() +
+                           " научная работа: " + ((Aspirant)student).getDegree());
 
-        System.out.println(student.lastName + " стипендия: " + student.getScholarship());
-
+        // Создаем массив объектов
         Student[] students = new Student[4];
 
-        student = new Student();
-        student.firstName = "Василий";
-        student.lastName = "Лоханкин";
-        student.group = "1";
-        student.averageMark = 5.0f;
+        student = new Student("Василий", "Лоханкин","1", 5.0);
         students[0] = student;
 
-        student = new Student();
-        student.firstName = "Иван";
-        student.lastName = "Иванов";
-        student.group = "1";
-        student.averageMark = 4.0f;
+        student = new Student("Иван","Иванов","1", 4.0);
         students[1] = student;
 
-        student = new Aspirant();
-        student.firstName = "Петр";
-        student.lastName = "Петров";
-        student.group = "1";
-        student.averageMark = 5.0f;
+        student = new Aspirant("Петр", "Петров", "1", 5.0, "Сферический конь в вакуме");
         students[2] = student;
 
-        student = new Aspirant();
-        student.firstName = "Сидр";
-        student.lastName = "Сидоров";
-        student.group = "1";
-        student.averageMark = 4.0f;
+        student = new Aspirant("Сидр","Сидоров", "1", 4.0, "Коллизии алгоритмов хеширования");
         students[3] = student;
 
         for (Student st : students) {
-            System.out.println(st.lastName + " стипендия: " + st.getScholarship());
+            System.out.println(" Фамилия: " + st.getLastName() +
+                               " Средняя оценка: " + st.getAverageMark() +
+                               " Стипендия: " + st.getScholarship());
+
+            // Для аспиранта выводим научную работу
+            if (st instanceof Aspirant) {
+                System.out.println("Научная работа: " + ((Aspirant)st).getDegree());
+            }
         }
     }
 }
