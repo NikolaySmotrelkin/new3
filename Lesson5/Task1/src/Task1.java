@@ -36,32 +36,11 @@ public class Task1 {
         }
 
         logger = logFactory.createLogger();
+        Calculator calculator = new Calculator(logger);
 
-        System.out.println("Введите выражение. Например: 2+3 и нажмите Enter.");
-        String value = scanner.nextLine();
-        String[] data = value.split("[+-/*]");
-
-        try {
-            double firstOperand = Double.parseDouble(data[0]);
-            double secondOperand = Double.parseDouble(data[1]);
-            double result = 0;
-
-            if (value.indexOf("+") > 0) {
-                result = firstOperand + secondOperand;
-            } else if (value.indexOf("-") > 0) {
-                result = firstOperand - secondOperand;
-            } else if (value.indexOf("/") > 0) {
-                result = firstOperand / secondOperand;
-            } else if (value.indexOf("*") > 0) {
-                result = firstOperand * secondOperand;
-            } else {
-                throw new Exception("недопустимое математическое действие. Используйте только +, -, /, *");
-            }
-
-            logger.log(Double.toString(result));
-
-        } catch (Exception e) {
-            System.out.println("Ошибка вычисления: " + e.getMessage());
-        }
+        Double plus = calculator.plus(2.0, 3.0);
+        Double minus = calculator.minus(2.0, 3.0);
+        Double div = calculator.div(2.0,3.0);
+        Double multiply = calculator.multiply(2.0,3.0);
     }
 }
