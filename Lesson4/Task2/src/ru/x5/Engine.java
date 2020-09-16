@@ -1,13 +1,22 @@
 package ru.x5;
 
 public class Engine {
+
     // Мощность
-    public int power;
+    private int power;
     // Производитель
-    public String manufacturer;
+    private String manufacturer;
 
     public Engine(int power, String manufacturer) {
         this.power = power;
         this.manufacturer = manufacturer;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
     }
 }

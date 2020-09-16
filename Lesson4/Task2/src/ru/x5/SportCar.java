@@ -1,11 +1,12 @@
 package ru.x5;
 
 public class SportCar extends Car {
-    // Предельная скорость
-    public int maxSpeed;
 
-    public SportCar(String model, String carClass, int weight, int maxSpeed) {
-        super(model, carClass, weight);
+    // Предельная скорость
+    private int maxSpeed;
+
+    public SportCar(String model, String carClass, int weight, int enginePower, String engineManufacturer, int maxSpeed) {
+        super(model, carClass, weight, enginePower, engineManufacturer);
         this.maxSpeed = maxSpeed;
     }
 
@@ -21,11 +22,15 @@ public class SportCar extends Car {
 
     @Override
     public void printInfo() {
-        System.out.println("Двигатель - производитель: " + engine.manufacturer);
-        System.out.println("Двигатель - мощность: " + engine.power);
-        System.out.println("Модель: " + model);
-        System.out.println("Класс: " + carClass);
-        System.out.println("Вес: " + weight);
+        System.out.println("Класс: " + getCarClass());
+        System.out.println("Модель: " + getModel());
+        System.out.println("Вес: " + getWeight());
+        System.out.println("Двигатель - производитель: " + getEngine().getManufacturer());
+        System.out.println("Двигатель - мощность: " + getEngine().getPower());
         System.out.println("Предельная скорость: " + maxSpeed);
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
     }
 }

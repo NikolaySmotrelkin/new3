@@ -10,12 +10,10 @@ public class Task2 {
         Car[] cars = new Car[2];
 
         // Создаем и инициализируем класс грузовика
-        cars[0] = new Lorry("K740.10", "грузовик", 5320, 8000);
-        cars[0].engine = new Engine(210, "Камаз");
+        cars[0] = new Lorry("Kамаз 740.10", "грузовик", 5320, 180, "Камаз", 8000);
 
         // Создаем и инициализируем класс спорткара
-        cars[1] = new SportCar("Porsche Cayenne", "спорткар", 2500, 280);
-        cars[1].engine = new Engine(600, "Porsche");
+        cars[1] = new SportCar("Porsche Cayenne", "спорткар", 2500, 600, "Porsche", 320);
 
         // Выводим данные о машинах
         for (Car car : cars) {
