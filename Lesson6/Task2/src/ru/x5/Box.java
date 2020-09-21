@@ -60,7 +60,7 @@ public class Box {
     }
 
     public boolean compare(Box box) {
-       return getWeight() == box.getWeight();
+        return Double.compare(getWeight(), box.getWeight()) == 0;
     }
 
     public void pour(Box box) {

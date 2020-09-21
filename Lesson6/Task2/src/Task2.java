@@ -44,5 +44,11 @@ public class Task2 {
 
         System.out.println("3-я Коробка: " + boxes.get(2).toString());
         System.out.println("4-я Коробка: " + boxes.get(3).toString());
+
+        if (boxes.get(1).compare(boxes.get(3))) {
+            System.out.println("Коробка 2 и коробка 4 равны по весу");
+        } else {
+            System.out.println("Коробка 2 и коробка 4 не равны по весу");
+        }
     }
 }
