@@ -43,5 +43,15 @@ public class Task2_v2 {
 
         System.out.println("3-я Коробка апельсинов: " + orangeBox1.toString());
         System.out.println("4-я Коробка апельсинов: " + orangeBox2.toString());
+
+        // Сравниваем коробу с апельсинами и яблоками по весу
+        if (appleBox2.compare(orangeBox2)) {
+            System.out.println("Коробка с апельсинами и яблоками равны по весу");
+        } else {
+            System.out.println("Коробка с апельсинами отличается по весу от коробки с яблоками");
+        }
+
+        // Перекладываем из ящика с яблоками в ящик с апельсинами и получаем сообщение с ошибкой
+        appleBox2.pour(orangeBox2);
     }
 }

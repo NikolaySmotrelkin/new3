@@ -13,4 +13,9 @@ public class Orange extends Fruit{
     public String toString() {
         return "Апельсин";
     }
+
+    @Override
+    public int hashCode() {
+        return 2;
+    }
 }

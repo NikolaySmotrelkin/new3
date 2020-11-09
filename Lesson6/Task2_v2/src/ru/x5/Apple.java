@@ -13,4 +13,9 @@ public class Apple extends  Fruit {
     public String toString() {
         return "Яблоко";
     }
+
+    @Override
+    public int hashCode() {
+        return 1;
+    }
 }

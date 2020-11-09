@@ -13,6 +13,10 @@ public class Box<T extends Fruit> {
         list.add(item);
     }
 
+    public T get(int index) {
+        return list.get(index);
+    }
+
     public Double getWeight() {
         Double weight = 0.0;
 
@@ -23,18 +27,29 @@ public class Box<T extends Fruit> {
         return weight;
     }
 
-    public boolean compare(Box<T> box) {
-        return Double.compare(this.getWeight(), box.getWeight()) == 0;
+    public boolean compare(Object box) {
+        return Double.compare(this.getWeight(), ((Box<Fruit>)box).getWeight()) == 0;
     }
 
-    public void pour(Box<T> box) {
-        if (box.getClass() != this.getClass()) {
-            System.out.println("Ошибка. Коробки должны быть одного типа.");
+    public boolean checkPour(Object box) {
+        Box<Fruit> bx = (Box<Fruit>)box;
+
+       // Если ящик пустой или содержит совместимые по типу фрукты, то разрешаем туда пересыпать
+       if ((bx.getWeight() == 0) || (list.get(0).hashCode() == bx.get(0).hashCode())) {
+           return true;
+       }
+
+       return false;
+    }
+
+    public void pour(Object box) {
+        if (!checkPour(box)) {
+            System.out.println("Ошибка. Ящики должны быть одного типа!");
             return;
         }
 
         for (T item : list) {
-            box.add(item);
+            ((Box<Fruit>)box).add(item);
         }
 
         list.clear();
